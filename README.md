@@ -70,3 +70,9 @@ Visit `http://127.0.0.1:5173/` to access the client application.
 
 ---
 
+ git init
+  git add *
+  git commit -m "first commit"
+  git branch -M main
+  git remote add origin https://github.com/roone858/Task-Management-Project.git
+  git push -u origin main
