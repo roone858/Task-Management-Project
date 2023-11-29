@@ -16,7 +16,7 @@ export function Home() {
     <div>
       <div className="flex items-center justify-center w-screen h-screen font-medium">
         <div className="flex flex-grow items-center justify-center h-full text-gray-600 bg-gray-100">
-          <div className=" p-8 bg-white rounded-lg shadow-lg min-w-[400px]">
+          <div className=" p-8 bg-white rounded-lg shadow-lg min-w-[600px]">
             <Header />
             <TaskList />
             <AddForm />

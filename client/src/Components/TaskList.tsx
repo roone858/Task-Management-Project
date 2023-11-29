@@ -6,7 +6,7 @@ const TaskList = () => {
   const tasks = useSelector((state: State) => state.tasks.list);
   return (
     <div>
-      {tasks.length && tasks.map((task, key: number) => (
+      {tasks?.length && tasks.map((task, key: number) => (
         <TaskItem key={key} task={task} />
       ))}
     </div>

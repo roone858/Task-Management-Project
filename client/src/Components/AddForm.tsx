@@ -6,24 +6,26 @@ import { getUserFromLocalStorage } from "../utils/localstorage";
 
 const AddForm = () => {
   const dispatch = useDispatch();
-  const [data, setData] = useState({ name: "", description: "", dueData: "" });
+  const [data, setData] = useState({
+    name: "",
+    description: "",
+    dueDate: "",
+    isCompleted: false,
+  });
   const [err, setErr] = useState("");
   const handleAdd = async () => {
-    console.log(data);
     const userID = getUserFromLocalStorage().userId;
     const newTask = await taskService.insertTask({
+      ...data,
       userId: userID,
-      name: data.name,
-      description: data.description,
-      dueDate: new Date(data.dueData),
-      isCompleted: false,
+      dueDate: new Date(data.dueDate),
     });
-    console.log(newTask);
+
     if (newTask.statusCode == 500) {
       return setErr(newTask.message);
     }
-    dispatch(addTask(newTask));
-    setErr("")
+    dispatch(addTask({ ...newTask, ...data }));
+    setErr("");
   };
   return (
     <div>

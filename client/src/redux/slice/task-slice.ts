@@ -26,7 +26,7 @@ const taskSlice = createSlice({
         taskId: action.payload.taskId,
         userId: userID,
         name: action.payload.name,
-        dueDate: action.payload.dueDate,
+        dueDate:action.payload.dueDate,
         description: action.payload.description,
         isCompleted: false,
       };
@@ -48,7 +48,7 @@ const taskSlice = createSlice({
       if (task) {
         task.name = action.payload.task.name;
         task.description = action.payload.task.description;
-        task.dueDate = action.payload.task.dueDate;
+        task.dueDate =action.payload.task.dueDate;
       }
     },
     removeTask: (state, action: PayloadAction<string>) => {
@@ -64,5 +64,6 @@ const taskSlice = createSlice({
   },
 });
 
-export const { addTask, toggleTask, removeTask,updateTask } = taskSlice.actions;
+export const { addTask, toggleTask, removeTask, updateTask } =
+  taskSlice.actions;
 export default taskSlice.reducer;
